@@ -1,0 +1,52 @@
+STATE,ABBREV,FIPS,On Highway
+Alabama,AL,01,2777
+Alaska,AK,02,416
+Arizona,AZ,04,3155
+Arkansas,AR,05,1504
+California,CA,06,16341
+Colorado,CO,08,2434
+Connecticut,CT,09,1556
+Delaware,DE,10,450
+District of Columbia,DC,11,520
+Florida,FL,12,8841
+Georgia,GA,13,5165
+Hawaii,HI,15,611
+Idaho,ID,16,832
+Illinois,IL,17,5038
+Indiana,IN,18,3130
+Iowa,IA,19,1596
+Kansas,KS,20,1360
+Kentucky,KY,21,2320
+Louisiana,LA,22,2391
+Maine,ME,23,703
+Maryland,MD,24,3161
+Massachusetts,MA,25,3010
+Michigan,MI,26,4735
+Minnesota,MN,27,2646
+Mississippi,MS,28,1789
+Missouri,MO,29,3337
+Montana,MT,30,651
+Nebraska,NE,31,918
+Nevada,NV,32,1274
+New Hampshire,NH,33,740
+New Jersey,NJ,34,4376
+New Mexico,NM,35,1327
+New York,NY,36,6035
+North Carolina,NC,37,4536
+North Dakota,ND,38,509
+Ohio,OH,39,5255
+Oklahoma,OK,40,2070
+Oregon,OR,41,1682
+Pennsylvania,PA,42,5412
+Rhode Island,RI,44,410
+South Carolina,SC,45,2822
+South Dakota,SD,46,534
+Tennessee,TN,47,3434
+Texas,TX,48,13557
+Utah,UT,49,1243
+Vermont,VT,50,334
+Virginia,VA,51,4664
+Washington,WA,53,3114
+West Virginia,WV,54,1000
+Wisconsin,WI,55,2522
+Wyoming,WY,56,430
