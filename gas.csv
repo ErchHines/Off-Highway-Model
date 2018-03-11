@@ -1,0 +1,205 @@
+"","PADD","State","ABBREV","FIPS","AGREGION","Year","ppg"
+"1","Gulf Coast (PADD 3)","Alabama","AL",1,"South",2012,3.479
+"2","Gulf Coast (PADD 3)","Alabama","AL",1,"South",2015,2.256
+"3","Gulf Coast (PADD 3)","Alabama","AL",1,"South",2016,2.024
+"4","Gulf Coast (PADD 3)","Alabama","AL",1,"South",2017,2.295
+"5","West Coast (PADD 5)","Alaska","AK",2,"",2012,3.805
+"6","West Coast (PADD 5)","Alaska","AK",2,"",2015,3.042
+"7","West Coast (PADD 5)","Alaska","AK",2,"",2016,2.646
+"8","West Coast (PADD 5)","Alaska","AK",2,"",2017,2.948
+"9","West Coast (PADD 5)","Arizona","AZ",4,"West",2012,3.805
+"10","West Coast (PADD 5)","Arizona","AZ",4,"West",2015,3.042
+"11","West Coast (PADD 5)","Arizona","AZ",4,"West",2016,2.646
+"12","West Coast (PADD 5)","Arizona","AZ",4,"West",2017,2.948
+"13","Gulf Coast (PADD 3)","Arkansas","AR",5,"South",2012,3.479
+"14","Gulf Coast (PADD 3)","Arkansas","AR",5,"South",2015,2.256
+"15","Gulf Coast (PADD 3)","Arkansas","AR",5,"South",2016,2.024
+"16","Gulf Coast (PADD 3)","Arkansas","AR",5,"South",2017,2.295
+"17","West Coast (PADD 5)","California","CA",6,"West",2012,4.081
+"18","West Coast (PADD 5)","California","CA",6,"West",2015,3.221
+"19","West Coast (PADD 5)","California","CA",6,"West",2016,2.782
+"20","West Coast (PADD 5)","California","CA",6,"West",2017,3.08
+"21","Rocky Mountain (PADD 4)","Colorado","CO",8,"West",2012,3.531
+"22","Rocky Mountain (PADD 4)","Colorado","CO",8,"West",2015,2.409
+"23","Rocky Mountain (PADD 4)","Colorado","CO",8,"West",2016,2.14
+"24","Rocky Mountain (PADD 4)","Colorado","CO",8,"West",2017,2.429
+"25","New England (PADD 1A)","Connecticut","CT",9,"Atlantic",2012,3.785
+"26","New England (PADD 1A)","Connecticut","CT",9,"Atlantic",2015,2.507
+"27","New England (PADD 1A)","Connecticut","CT",9,"Atlantic",2016,2.255
+"28","New England (PADD 1A)","Connecticut","CT",9,"Atlantic",2017,2.532
+"29","Central Atlantic (PADD 1B)","Delaware","DE",10,"Atlantic",2012,3.763
+"30","Central Atlantic (PADD 1B)","Delaware","DE",10,"Atlantic",2015,2.559
+"31","Central Atlantic (PADD 1B)","Delaware","DE",10,"Atlantic",2016,2.312
+"32","Central Atlantic (PADD 1B)","Delaware","DE",10,"Atlantic",2017,2.639
+"33","Central Atlantic (PADD 1B)","District of Columbia","DC",11,"",2012,3.763
+"34","Central Atlantic (PADD 1B)","District of Columbia","DC",11,"",2015,2.559
+"35","Central Atlantic (PADD 1B)","District of Columbia","DC",11,"",2016,2.312
+"36","Central Atlantic (PADD 1B)","District of Columbia","DC",11,"",2017,2.639
+"37","Lower Atlantic (PADD 1C)","Florida","FL",12,"South",2012,3.629
+"38","Lower Atlantic (PADD 1C)","Florida","FL",12,"South",2015,2.438
+"39","Lower Atlantic (PADD 1C)","Florida","FL",12,"South",2016,2.216
+"40","Lower Atlantic (PADD 1C)","Florida","FL",12,"South",2017,2.485
+"41","Lower Atlantic (PADD 1C)","Georgia","GA",13,"South",2012,3.618
+"42","Lower Atlantic (PADD 1C)","Georgia","GA",13,"South",2015,2.42
+"43","Lower Atlantic (PADD 1C)","Georgia","GA",13,"South",2016,2.206
+"44","Lower Atlantic (PADD 1C)","Georgia","GA",13,"South",2017,2.455
+"45","West Coast (PADD 5)","Hawaii","HI",15,"",2012,3.805
+"46","West Coast (PADD 5)","Hawaii","HI",15,"",2015,3.042
+"47","West Coast (PADD 5)","Hawaii","HI",15,"",2016,2.646
+"48","West Coast (PADD 5)","Hawaii","HI",15,"",2017,2.948
+"49","Rocky Mountain (PADD 4)","Idaho","ID",16,"West",2012,3.552
+"50","Rocky Mountain (PADD 4)","Idaho","ID",16,"West",2015,2.481
+"51","Rocky Mountain (PADD 4)","Idaho","ID",16,"West",2016,2.212
+"52","Rocky Mountain (PADD 4)","Idaho","ID",16,"West",2017,2.498
+"53","Midwest (PADD 2)","Illinois","IL",17,"Midwest",2012,3.605
+"54","Midwest (PADD 2)","Illinois","IL",17,"Midwest",2015,2.411
+"55","Midwest (PADD 2)","Illinois","IL",17,"Midwest",2016,2.143
+"56","Midwest (PADD 2)","Illinois","IL",17,"Midwest",2017,2.405
+"57","Midwest (PADD 2)","Indiana","IN",18,"Midwest",2012,3.605
+"58","Midwest (PADD 2)","Indiana","IN",18,"Midwest",2015,2.411
+"59","Midwest (PADD 2)","Indiana","IN",18,"Midwest",2016,2.143
+"60","Midwest (PADD 2)","Indiana","IN",18,"Midwest",2017,2.405
+"61","Midwest (PADD 2)","Iowa","IA",19,"Midwest",2012,3.605
+"62","Midwest (PADD 2)","Iowa","IA",19,"Midwest",2015,2.411
+"63","Midwest (PADD 2)","Iowa","IA",19,"Midwest",2016,2.143
+"64","Midwest (PADD 2)","Iowa","IA",19,"Midwest",2017,2.405
+"65","Midwest (PADD 2)","Kansas","KS",20,"Plains",2012,3.605
+"66","Midwest (PADD 2)","Kansas","KS",20,"Plains",2015,2.411
+"67","Midwest (PADD 2)","Kansas","KS",20,"Plains",2016,2.143
+"68","Midwest (PADD 2)","Kansas","KS",20,"Plains",2017,2.405
+"69","Midwest (PADD 2)","Kentucky","KY",21,"Atlantic",2012,3.605
+"70","Midwest (PADD 2)","Kentucky","KY",21,"Atlantic",2015,2.411
+"71","Midwest (PADD 2)","Kentucky","KY",21,"Atlantic",2016,2.143
+"72","Midwest (PADD 2)","Kentucky","KY",21,"Atlantic",2017,2.405
+"73","Gulf Coast (PADD 3)","Louisiana","LA",22,"South",2012,3.479
+"74","Gulf Coast (PADD 3)","Louisiana","LA",22,"South",2015,2.256
+"75","Gulf Coast (PADD 3)","Louisiana","LA",22,"South",2016,2.024
+"76","Gulf Coast (PADD 3)","Louisiana","LA",22,"South",2017,2.295
+"77","New England (PADD 1A)","Maine","ME",23,"Atlantic",2012,3.785
+"78","New England (PADD 1A)","Maine","ME",23,"Atlantic",2015,2.507
+"79","New England (PADD 1A)","Maine","ME",23,"Atlantic",2016,2.255
+"80","New England (PADD 1A)","Maine","ME",23,"Atlantic",2017,2.532
+"81","Central Atlantic (PADD 1B)","Maryland","MD",24,"Atlantic",2012,3.763
+"82","Central Atlantic (PADD 1B)","Maryland","MD",24,"Atlantic",2015,2.559
+"83","Central Atlantic (PADD 1B)","Maryland","MD",24,"Atlantic",2016,2.312
+"84","Central Atlantic (PADD 1B)","Maryland","MD",24,"Atlantic",2017,2.639
+"85","New England (PADD 1A)","Massachusetts","MA",25,"Atlantic",2012,3.717
+"86","New England (PADD 1A)","Massachusetts","MA",25,"Atlantic",2015,2.462
+"87","New England (PADD 1A)","Massachusetts","MA",25,"Atlantic",2016,2.221
+"88","New England (PADD 1A)","Massachusetts","MA",25,"Atlantic",2017,2.511
+"89","Midwest (PADD 2)","Michigan","MI",26,"Midwest",2012,3.605
+"90","Midwest (PADD 2)","Michigan","MI",26,"Midwest",2015,2.411
+"91","Midwest (PADD 2)","Michigan","MI",26,"Midwest",2016,2.143
+"92","Midwest (PADD 2)","Michigan","MI",26,"Midwest",2017,2.405
+"93","Midwest (PADD 2)","Minnesota","MN",27,"Midwest",2012,3.562
+"94","Midwest (PADD 2)","Minnesota","MN",27,"Midwest",2015,2.398
+"95","Midwest (PADD 2)","Minnesota","MN",27,"Midwest",2016,2.09
+"96","Midwest (PADD 2)","Minnesota","MN",27,"Midwest",2017,2.387
+"97","Gulf Coast (PADD 3)","Mississippi","MS",28,"South",2012,3.479
+"98","Gulf Coast (PADD 3)","Mississippi","MS",28,"South",2015,2.256
+"99","Gulf Coast (PADD 3)","Mississippi","MS",28,"South",2016,2.024
+"100","Gulf Coast (PADD 3)","Mississippi","MS",28,"South",2017,2.295
+"101","Midwest (PADD 2)","Missouri","MO",29,"Midwest",2012,3.605
+"102","Midwest (PADD 2)","Missouri","MO",29,"Midwest",2015,2.411
+"103","Midwest (PADD 2)","Missouri","MO",29,"Midwest",2016,2.143
+"104","Midwest (PADD 2)","Missouri","MO",29,"Midwest",2017,2.405
+"105","Rocky Mountain (PADD 4)","Montana","MT",30,"West",2012,3.552
+"106","Rocky Mountain (PADD 4)","Montana","MT",30,"West",2015,2.481
+"107","Rocky Mountain (PADD 4)","Montana","MT",30,"West",2016,2.212
+"108","Rocky Mountain (PADD 4)","Montana","MT",30,"West",2017,2.498
+"109","Midwest (PADD 2)","Nebraska","NE",31,"Plains",2012,3.605
+"110","Midwest (PADD 2)","Nebraska","NE",31,"Plains",2015,2.411
+"111","Midwest (PADD 2)","Nebraska","NE",31,"Plains",2016,2.143
+"112","Midwest (PADD 2)","Nebraska","NE",31,"Plains",2017,2.405
+"113","West Coast (PADD 5)","Nevada","NV",32,"West",2012,3.805
+"114","West Coast (PADD 5)","Nevada","NV",32,"West",2015,3.042
+"115","West Coast (PADD 5)","Nevada","NV",32,"West",2016,2.646
+"116","West Coast (PADD 5)","Nevada","NV",32,"West",2017,2.948
+"117","New England (PADD 1A)","New Hampshire","NH",33,"Atlantic",2012,3.785
+"118","New England (PADD 1A)","New Hampshire","NH",33,"Atlantic",2015,2.507
+"119","New England (PADD 1A)","New Hampshire","NH",33,"Atlantic",2016,2.255
+"120","New England (PADD 1A)","New Hampshire","NH",33,"Atlantic",2017,2.532
+"121","Central Atlantic (PADD 1B)","New Jersey","NJ",34,"Atlantic",2012,3.763
+"122","Central Atlantic (PADD 1B)","New Jersey","NJ",34,"Atlantic",2015,2.559
+"123","Central Atlantic (PADD 1B)","New Jersey","NJ",34,"Atlantic",2016,2.312
+"124","Central Atlantic (PADD 1B)","New Jersey","NJ",34,"Atlantic",2017,2.639
+"125","Gulf Coast (PADD 3)","New Mexico","NM",35,"West",2012,3.479
+"126","Gulf Coast (PADD 3)","New Mexico","NM",35,"West",2015,2.256
+"127","Gulf Coast (PADD 3)","New Mexico","NM",35,"West",2016,2.024
+"128","Gulf Coast (PADD 3)","New Mexico","NM",35,"West",2017,2.295
+"129","Central Atlantic (PADD 1B)","New York","NY",36,"Atlantic",2012,3.763
+"130","Central Atlantic (PADD 1B)","New York","NY",36,"Atlantic",2015,2.559
+"131","Central Atlantic (PADD 1B)","New York","NY",36,"Atlantic",2016,2.312
+"132","Central Atlantic (PADD 1B)","New York","NY",36,"Atlantic",2017,2.639
+"133","Lower Atlantic (PADD 1C)","North Carolina","NC",37,"Atlantic",2012,3.618
+"134","Lower Atlantic (PADD 1C)","North Carolina","NC",37,"Atlantic",2015,2.42
+"135","Lower Atlantic (PADD 1C)","North Carolina","NC",37,"Atlantic",2016,2.206
+"136","Lower Atlantic (PADD 1C)","North Carolina","NC",37,"Atlantic",2017,2.455
+"137","Midwest (PADD 2)","North Dakota","ND",38,"Plains",2012,3.605
+"138","Midwest (PADD 2)","North Dakota","ND",38,"Plains",2015,2.411
+"139","Midwest (PADD 2)","North Dakota","ND",38,"Plains",2016,2.143
+"140","Midwest (PADD 2)","North Dakota","ND",38,"Plains",2017,2.405
+"141","Midwest (PADD 2)","Ohio","OH",39,"Midwest",2012,3.611
+"142","Midwest (PADD 2)","Ohio","OH",39,"Midwest",2015,2.408
+"143","Midwest (PADD 2)","Ohio","OH",39,"Midwest",2016,2.185
+"144","Midwest (PADD 2)","Ohio","OH",39,"Midwest",2017,2.384
+"145","Midwest (PADD 2)","Oklahoma","OK",40,"Plains",2012,3.605
+"146","Midwest (PADD 2)","Oklahoma","OK",40,"Plains",2015,2.411
+"147","Midwest (PADD 2)","Oklahoma","OK",40,"Plains",2016,2.143
+"148","Midwest (PADD 2)","Oklahoma","OK",40,"Plains",2017,2.405
+"149","West Coast (PADD 5)","Oregon","OR",41,"West",2012,3.805
+"150","West Coast (PADD 5)","Oregon","OR",41,"West",2015,3.042
+"151","West Coast (PADD 5)","Oregon","OR",41,"West",2016,2.646
+"152","West Coast (PADD 5)","Oregon","OR",41,"West",2017,2.948
+"153","Central Atlantic (PADD 1B)","Pennsylvania","PA",42,"Atlantic",2012,3.763
+"154","Central Atlantic (PADD 1B)","Pennsylvania","PA",42,"Atlantic",2015,2.559
+"155","Central Atlantic (PADD 1B)","Pennsylvania","PA",42,"Atlantic",2016,2.312
+"156","Central Atlantic (PADD 1B)","Pennsylvania","PA",42,"Atlantic",2017,2.639
+"157","New England (PADD 1A)","Rhode Island","RI",44,"Atlantic",2012,3.785
+"158","New England (PADD 1A)","Rhode Island","RI",44,"Atlantic",2015,2.507
+"159","New England (PADD 1A)","Rhode Island","RI",44,"Atlantic",2016,2.255
+"160","New England (PADD 1A)","Rhode Island","RI",44,"Atlantic",2017,2.532
+"161","Lower Atlantic (PADD 1C)","South Carolina","SC",45,"South",2012,3.618
+"162","Lower Atlantic (PADD 1C)","South Carolina","SC",45,"South",2015,2.42
+"163","Lower Atlantic (PADD 1C)","South Carolina","SC",45,"South",2016,2.206
+"164","Lower Atlantic (PADD 1C)","South Carolina","SC",45,"South",2017,2.455
+"165","Midwest (PADD 2)","South Dakota","SD",46,"Plains",2012,3.605
+"166","Midwest (PADD 2)","South Dakota","SD",46,"Plains",2015,2.411
+"167","Midwest (PADD 2)","South Dakota","SD",46,"Plains",2016,2.143
+"168","Midwest (PADD 2)","South Dakota","SD",46,"Plains",2017,2.405
+"169","Midwest (PADD 2)","Tennessee","TN",47,"Atlantic",2012,3.605
+"170","Midwest (PADD 2)","Tennessee","TN",47,"Atlantic",2015,2.411
+"171","Midwest (PADD 2)","Tennessee","TN",47,"Atlantic",2016,2.143
+"172","Midwest (PADD 2)","Tennessee","TN",47,"Atlantic",2017,2.405
+"173","Gulf Coast (PADD 3)","Texas","TX",48,"Plains",2012,3.486
+"174","Gulf Coast (PADD 3)","Texas","TX",48,"Plains",2015,2.26
+"175","Gulf Coast (PADD 3)","Texas","TX",48,"Plains",2016,2.016
+"176","Gulf Coast (PADD 3)","Texas","TX",48,"Plains",2017,2.294
+"177","Rocky Mountain (PADD 4)","Utah","UT",49,"West",2012,3.552
+"178","Rocky Mountain (PADD 4)","Utah","UT",49,"West",2015,2.481
+"179","Rocky Mountain (PADD 4)","Utah","UT",49,"West",2016,2.212
+"180","Rocky Mountain (PADD 4)","Utah","UT",49,"West",2017,2.498
+"181","New England (PADD 1A)","Vermont","VT",50,"Atlantic",2012,3.785
+"182","New England (PADD 1A)","Vermont","VT",50,"Atlantic",2015,2.507
+"183","New England (PADD 1A)","Vermont","VT",50,"Atlantic",2016,2.255
+"184","New England (PADD 1A)","Vermont","VT",50,"Atlantic",2017,2.532
+"185","Lower Atlantic (PADD 1C)","Virginia","VA",51,"Atlantic",2012,3.618
+"186","Lower Atlantic (PADD 1C)","Virginia","VA",51,"Atlantic",2015,2.42
+"187","Lower Atlantic (PADD 1C)","Virginia","VA",51,"Atlantic",2016,2.206
+"188","Lower Atlantic (PADD 1C)","Virginia","VA",51,"Atlantic",2017,2.455
+"189","West Coast (PADD 5)","Washington","WA",53,"West",2012,3.883
+"190","West Coast (PADD 5)","Washington","WA",53,"West",2015,2.754
+"191","West Coast (PADD 5)","Washington","WA",53,"West",2016,2.531
+"192","West Coast (PADD 5)","Washington","WA",53,"West",2017,2.911
+"193","Lower Atlantic (PADD 1C)","West Virginia","WV",54,"Atlantic",2012,3.618
+"194","Lower Atlantic (PADD 1C)","West Virginia","WV",54,"Atlantic",2015,2.42
+"195","Lower Atlantic (PADD 1C)","West Virginia","WV",54,"Atlantic",2016,2.206
+"196","Lower Atlantic (PADD 1C)","West Virginia","WV",54,"Atlantic",2017,2.455
+"197","Midwest (PADD 2)","Wisconsin","WI",55,"Midwest",2012,3.605
+"198","Midwest (PADD 2)","Wisconsin","WI",55,"Midwest",2015,2.411
+"199","Midwest (PADD 2)","Wisconsin","WI",55,"Midwest",2016,2.143
+"200","Midwest (PADD 2)","Wisconsin","WI",55,"Midwest",2017,2.405
+"201","Rocky Mountain (PADD 4)","Wyoming","WY",56,"West",2012,3.552
+"202","Rocky Mountain (PADD 4)","Wyoming","WY",56,"West",2015,2.481
+"203","Rocky Mountain (PADD 4)","Wyoming","WY",56,"West",2016,2.212
+"204","Rocky Mountain (PADD 4)","Wyoming","WY",56,"West",2017,2.498

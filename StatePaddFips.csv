@@ -1,52 +1,52 @@
-PADD,STATE,ABBREV,FIPS
-Gulf Coast (PADD 3),Alabama,AL,01
-West Coast (PADD 5),Alaska,AK,02
-West Coast (PADD 5),Arizona,AZ,04
-Gulf Coast (PADD 3),Arkansas,AR,05
-West Coast (PADD 5),California,CA,06
-Rocky Mountain (PADD 4),Colorado,CO,08
-New England (PADD 1A),Connecticut,CT,09
-Central Atlantic (PADD 1B),Delaware,DE,10
-Central Atlantic (PADD 1B),District of Columbia,DC,11
-Lower Atlantic (PADD 1C),Florida,FL,12
-Lower Atlantic (PADD 1C),Georgia,GA,13
-West Coast (PADD 5),Hawaii,HI,15
-Rocky Mountain (PADD 4),Idaho,ID,16
-Midwest (PADD 2),Illinois,IL,17
-Midwest (PADD 2),Indiana,IN,18
-Midwest (PADD 2),Iowa,IA,19
-Midwest (PADD 2),Kansas,KS,20
-Midwest (PADD 2),Kentucky,KY,21
-Gulf Coast (PADD 3),Louisiana,LA,22
-New England (PADD 1A),Maine,ME,23
-Central Atlantic (PADD 1B),Maryland,MD,24
-New England (PADD 1A),Massachusetts,MA,25
-Midwest (PADD 2),Michigan,MI,26
-Midwest (PADD 2),Minnesota,MN,27
-Gulf Coast (PADD 3),Mississippi,MS,28
-Midwest (PADD 2),Missouri,MO,29
-Rocky Mountain (PADD 4),Montana,MT,30
-Midwest (PADD 2),Nebraska,NE,31
-West Coast (PADD 5),Nevada,NV,32
-New England (PADD 1A),New Hampshire,NH,33
-Central Atlantic (PADD 1B),New Jersey,NJ,34
-Gulf Coast (PADD 3),New Mexico,NM,35
-Central Atlantic (PADD 1B),New York,NY,36
-Lower Atlantic (PADD 1C),North Carolina,NC,37
-Midwest (PADD 2),North Dakota,ND,38
-Midwest (PADD 2),Ohio,OH,39
-Midwest (PADD 2),Oklahoma,OK,40
-West Coast (PADD 5),Oregon,OR,41
-Central Atlantic (PADD 1B),Pennsylvania,PA,42
-New England (PADD 1A),Rhode Island,RI,44
-Lower Atlantic (PADD 1C),South Carolina,SC,45
-Midwest (PADD 2),South Dakota,SD,46
-Midwest (PADD 2),Tennessee,TN,47
-Gulf Coast (PADD 3),Texas,TX,48
-Rocky Mountain (PADD 4),Utah,UT,49
-New England (PADD 1A),Vermont,VT,50
-Lower Atlantic (PADD 1C),Virginia,VA,51
-West Coast (PADD 5),Washington,WA,53
-Lower Atlantic (PADD 1C),West Virginia,WV,54
-Midwest (PADD 2),Wisconsin,WI,55
-Rocky Mountain (PADD 4),Wyoming,WY,56
+State,ABBREV,FIPS,PADD,AGREGION
+Alabama,AL,1,Gulf Coast (PADD 3),South
+Alaska,AK,2,West Coast (PADD 5),
+Arizona,AZ,4,West Coast (PADD 5),West
+Arkansas,AR,5,Gulf Coast (PADD 3),South
+California,CA,6,West Coast (PADD 5),West
+Colorado,CO,8,Rocky Mountain (PADD 4),West
+Connecticut,CT,9,New England (PADD 1A),Atlantic
+Delaware,DE,10,Central Atlantic (PADD 1B),Atlantic
+District of Columbia,DC,11,Central Atlantic (PADD 1B),
+Florida,FL,12,Lower Atlantic (PADD 1C),South
+Georgia,GA,13,Lower Atlantic (PADD 1C),South
+Hawaii,HI,15,West Coast (PADD 5),
+Idaho,ID,16,Rocky Mountain (PADD 4),West
+Illinois,IL,17,Midwest (PADD 2),Midwest
+Indiana,IN,18,Midwest (PADD 2),Midwest
+Iowa,IA,19,Midwest (PADD 2),Midwest
+Kansas,KS,20,Midwest (PADD 2),Plains
+Kentucky,KY,21,Midwest (PADD 2),Atlantic
+Louisiana,LA,22,Gulf Coast (PADD 3),South
+Maine,ME,23,New England (PADD 1A),Atlantic
+Maryland,MD,24,Central Atlantic (PADD 1B),Atlantic
+Massachusetts,MA,25,New England (PADD 1A),Atlantic
+Michigan,MI,26,Midwest (PADD 2),Midwest
+Minnesota,MN,27,Midwest (PADD 2),Midwest
+Mississippi,MS,28,Gulf Coast (PADD 3),South
+Missouri,MO,29,Midwest (PADD 2),Midwest
+Montana,MT,30,Rocky Mountain (PADD 4),West
+Nebraska,NE,31,Midwest (PADD 2),Plains
+Nevada,NV,32,West Coast (PADD 5),West
+New Hampshire,NH,33,New England (PADD 1A),Atlantic
+New Jersey,NJ,34,Central Atlantic (PADD 1B),Atlantic
+New Mexico,NM,35,Gulf Coast (PADD 3),West
+New York,NY,36,Central Atlantic (PADD 1B),Atlantic
+North Carolina,NC,37,Lower Atlantic (PADD 1C),Atlantic
+North Dakota,ND,38,Midwest (PADD 2),Plains
+Ohio,OH,39,Midwest (PADD 2),Midwest
+Oklahoma,OK,40,Midwest (PADD 2),Plains
+Oregon,OR,41,West Coast (PADD 5),West
+Pennsylvania,PA,42,Central Atlantic (PADD 1B),Atlantic
+Rhode Island,RI,44,New England (PADD 1A),Atlantic
+South Carolina,SC,45,Lower Atlantic (PADD 1C),South
+South Dakota,SD,46,Midwest (PADD 2),Plains
+Tennessee,TN,47,Midwest (PADD 2),Atlantic
+Texas,TX,48,Gulf Coast (PADD 3),Plains
+Utah,UT,49,Rocky Mountain (PADD 4),West
+Vermont,VT,50,New England (PADD 1A),Atlantic
+Virginia,VA,51,Lower Atlantic (PADD 1C),Atlantic
+Washington,WA,53,West Coast (PADD 5),West
+West Virginia,WV,54,Lower Atlantic (PADD 1C),Atlantic
+Wisconsin,WI,55,Midwest (PADD 2),Midwest
+Wyoming,WY,56,Rocky Mountain (PADD 4),West
