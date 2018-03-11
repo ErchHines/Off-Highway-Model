@@ -5,7 +5,7 @@ analysis.year <- 2017
 #### Global Variables and Functions ###################
 EPA <- read.csv("Unknown Update/EPA Results.csv", header = TRUE)
 
-vius <- read.csv("VIUS Ratios.csv", header = TRUE)
+vius <- read.csv("VIUS (2002).csv", header = TRUE)
 
 state.padd.fips <- read.csv("StatePaddFips.csv", header=TRUE)
 
@@ -43,6 +43,9 @@ rm(retail.gas.big.states,retail.gas.impute,retail.gas.padd,retail.gas.report)
 
 ag.data.year <- 2016
 ag.census.year <- 2012
+
+#Remove DC from our VIUS table
+ag.vius <- subset(vius, !(vius$State == "District of Columbia"))
 
 #Read in the tables
 # note: The Five year USDA census contains all the states and will be 
@@ -103,7 +106,7 @@ ag.state.all$agall <- ag.state.all$total.gas.s/ag.state.all$ppg
 ag.state.all <- merge(x=ag.state.all , y=EPA[c("State","Agricultural.Equipment")], by= "State", all.x = TRUE)
 
 #Perform calculations to get off highway number for agriculture
-ag.state.all <- ag.state.all %>% mutate(truck.on = (agall - Agricultural.Equipment) * vius$ONVMT.Truck) %>% mutate(Agriculture = agall - truck.on)
+ag.state.all <- ag.state.all %>% mutate(truck.on = (agall - Agricultural.Equipment) * ag.vius$ONVMT.Truck) %>% mutate(Agriculture = agall - truck.on)
 
 off.highway.model <- ag.state.all[,c("State","Agriculture")]
 
@@ -168,7 +171,7 @@ aviation.offhwy <- arrange(aviation.offhwy,State)
 
 names(aviation.offhwy)[names(aviation.offhwy)=="aviation.tgy.s"] <- "Aviation"
 
-off.highway.model <- merge(off.highway.model, aviation.offhwy, by="State")
+off.highway.model <- merge(off.highway.model, aviation.offhwy, by="State", all.y = TRUE)
 
 #remove all the tables we don't need going forward
 rm(aviation.missing, aviation.padd, aviation.padd.sum, aviation.state, aviation.state.impute, aviation.state.impute1, aviation.state.report, aviation.offhwy)
@@ -212,7 +215,23 @@ boat.types <- boat.types %>% mutate(number.boats = Registered.Boats * Percent.Ga
 
 boating.offhwy <- aggregate(Boating ~ State, boat.types, sum)
 
-off.highway.model <- merge(off.highway.model,boating.offhwy, by = "State")
+off.highway.model <- merge(off.highway.model,boating.offhwy, by = "State", all.y = TRUE)
 
 #remove the intermediatary tables
 rm(boat.types,boating,dpi.growth, gas.growth, DPI, boating.offhwy)
+
+#### Industrial Commerical and Construction Values #############
+vm2.data.year <- 2016
+
+vm2 <- read.csv("1 Year Update/VM2.csv", header = TRUE)
+#merge our vm2 with the vius
+
+vm2 <- subset(vm2, vm2$Year == vm2.data.year)
+
+icc <- merge(x = vm2, y = vius, by = "State")
+
+# Perform all the calculations to get the off highway number
+
+icc <- icc %>% mutate(off.vmt.mm = VM.2 * Adj..Factor) %>% mutate(PERCENT.VMT.OTHER = 1 - rowSums(icc[c("PERCENT.VMT.CONSTRUCTION", "PERCENT.VMT.INDUSTRIAL", "PERCENT.VMT.COMMERCIAL")])) %>% mutate(VMT.OTHER = off.vmt.mm * PERCENT.VMT.OTHER) %>% mutate(VMT.CONSTRUCTION = PERCENT.VMT.CONSTRUCTION * off.vmt.mm) %>% mutate(VMT.INDUSTRIAL = PERCENT.VMT.INDUSTRIAL * off.vmt.mm) %>% mutate(VMT.COMMERCIAL = PERCENT.VMT.COMMERCIAL * off.vmt.mm) %>% mutate(Construction = (VMT.CONSTRUCTION / MPG.CONSTRUCTION)*1000) %>% mutate(Industrial.Commercial = ((VMT.COMMERCIAL / MPG.COMMERCIAL)*1000)+((VMT.INDUSTRIAL / MPG.INDUSTRIAL)*1000))
+
+off.highway.model <- merge(x = off.highway.model, y = icc[c("State","Industrial.Commercial","Construction")], by = "State", all.y = TRUE)
