@@ -72,7 +72,7 @@ ag.region$percent.gas.r <- ag.region$Gasoline/ag.region$Total
 census.ag.fe.region <- subset(ag.region, Year == ag.census.year)
 ay.ag.fe.region <- subset(ag.region, Year == ag.data.year)
 census.ag.fe.15.states <- subset(ag.fe.15.states, Year == ag.census.year)
-ay.ag.fe.15.states <- subset(ag.fe.15.states, Year == analysis.year-1)
+ay.ag.fe.15.states <- subset(ag.fe.15.states, Year == ag.data.year)
 
 
 #Store the value of US Fuel consumption for the analysis year from the ay region table
@@ -130,13 +130,13 @@ ag.state.all$agall <- ag.state.all$total.gas.s/ag.state.all$ppg
 
 #Bring in EPA Agricultural Equipment numbers
 ag.state.all <- merge(
-      x=ag.state.all , y=EPA[c("State","Agricultural.Equipment")], 
+      x=ag.state.all , y = EPA[c("State","Agricultural.Equipment")], 
       by= "State", all.x = TRUE
 )
 
 #Perform calculations to get off highway number for agriculture
 ag.state.all <- ag.state.all %>% mutate(
-      truck.on = (agall - Agricultural.Equipment) * ag.vius$ONVMT.Truck, 
+      truck.on    = (agall - Agricultural.Equipment) * ag.vius$ONVMT.Truck, 
       Agriculture = agall - truck.on
 )
 
@@ -164,8 +164,10 @@ aviation.state <- merge(
 #Calculate the volume of aviation in thousands of gallons per year 
 #(tgy) taking into account whether or not the data comes from a leap year
 aviation.state <- aviation.state %>% mutate(
-      aviation.tgy.s = 
-      ifelse(is.leapyear(YEAR),aviation.tgd.s*366,aviation.tgd.s*365)
+      aviation.tgy.s = ifelse(
+            is.leapyear(YEAR),aviation.tgd.s*366,
+            aviation.tgd.s*365
+      )
 ) 
 
 aviation.padd <- aviation.padd %>% mutate(
@@ -333,10 +335,10 @@ icc <- icc %>% mutate(
       PERCENT.VMT.OTHER = 
             1 - rowSums(icc[c("PERCENT.VMT.CONSTRUCTION", "PERCENT.VMT.INDUSTRIAL", 
             "PERCENT.VMT.COMMERCIAL")]),
-      VMT.OTHER = off.vmt.mm * PERCENT.VMT.OTHER,
+      VMT.OTHER        = off.vmt.mm * PERCENT.VMT.OTHER,
       VMT.CONSTRUCTION = PERCENT.VMT.CONSTRUCTION * off.vmt.mm,
-      VMT.INDUSTRIAL = PERCENT.VMT.INDUSTRIAL * off.vmt.mm,
-      VMT.COMMERCIAL = PERCENT.VMT.COMMERCIAL * off.vmt.mm,
+      VMT.INDUSTRIAL   = PERCENT.VMT.INDUSTRIAL * off.vmt.mm,
+      VMT.COMMERCIAL   = PERCENT.VMT.COMMERCIAL * off.vmt.mm,
       Construction = (VMT.CONSTRUCTION / MPG.CONSTRUCTION)*1000,
       Industrial.Commercial = ((VMT.COMMERCIAL / MPG.COMMERCIAL)*1000)+
             ((VMT.INDUSTRIAL / MPG.INDUSTRIAL)*1000)
@@ -406,7 +408,7 @@ ffr.43 <- ffr.43 %>% mutate(
                   PASSENGER.VMT.Total / 
                   vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
                   TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
-                  OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]
+                  OTHER.VMT.Total  / vm1$MPG[vm1$Vehicle == "BUSES"]
             ) * Worldwide.Gasoline.Use..Gallons.
 )
 
@@ -416,7 +418,7 @@ ffr.43 <- ffr.43 %>% mutate(
                   PASSENGER.VMT.Total /
                   vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
                   TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
-                  OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]
+                  OTHER.VMT.Total  / vm1$MPG[vm1$Vehicle == "BUSES"]
             ) * Worldwide.Gasoline.Use..Gallons.
 )
 
@@ -426,29 +428,29 @@ ffr.43 <- ffr.43 %>% mutate(
                   PASSENGER.VMT.Total / 
                   vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
                   TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
-                  OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]
+                  OTHER.VMT.Total  / vm1$MPG[vm1$Vehicle == "BUSES"]
             ) * Worldwide.Gasoline.Use..Gallons.
 )
 
 ffr.43 <- ffr.43 %>% mutate(
       PASSENGER.GALLONS.Domestic = PASSENGER.VMT.Domestic / 
-            PASSENGER.VMT.Total * PASSENGER.GALLONS.Total, 
+            PASSENGER.VMT.Total  * PASSENGER.GALLONS.Total, 
       PASSENGER.GALLLONS.Foreign = PASSENGER.VMT.Foreign / 
-            PASSENGER.VMT.Total * PASSENGER.GALLONS.Total
+            PASSENGER.VMT.Total  * PASSENGER.GALLONS.Total
 )
 
 ffr.43 <- ffr.43 %>% mutate(
       TRUCKS.GALLONS.Domestic = TRUCKS.VMT.Domestic / 
-            TRUCKS.VMT.Total * TRUCKS.GALLONS.Total,
+            TRUCKS.VMT.Total  * TRUCKS.GALLONS.Total,
       TRUCKS.GALLLONS.Foreign = TRUCKS.VMT.Foreign / 
-            TRUCKS.VMT.Total * TRUCKS.GALLONS.Total
+            TRUCKS.VMT.Total  * TRUCKS.GALLONS.Total
 )
 
 ffr.43 <- ffr.43 %>% mutate(
       OTHER.GALLONS.Domestic = OTHER.VMT.Domestic / 
-            OTHER.VMT.Total * OTHER.GALLONS.Total,
+            OTHER.VMT.Total  * OTHER.GALLONS.Total,
       OTHER.GALLLONS.Foreign = OTHER.VMT.Foreign / 
-            OTHER.VMT.Total * OTHER.GALLONS.Total
+            OTHER.VMT.Total  * OTHER.GALLONS.Total
 )
 
 civilian.usps <- as.data.table(ffr.43[,3:ncol(ffr.43)], 
@@ -465,7 +467,7 @@ civilian.usps.combined <- civilian.usps %>% mutate(
             (sum(ffr.43$OTHER.VMT.Foreign, na.rm = TRUE) * scm.adj),
       OTHER.VMT.Domestic = sum(ffr.43$OTHER.VMT.Domestic, na.rm = TRUE) *
             (1 - scm.adj),
-      OTHER.VMT.Foreign = 
+      OTHER.VMT.Foreign  = 
             sum(ffr.43$OTHER.VMT.Foreign, na.rm = TRUE) * (1 - scm.adj)
 )
 
@@ -490,9 +492,9 @@ mv7 <- merge(
 )
 
 mv7 <- mv7 %>% mutate(
-      Federal.CAR.tg = ((Federal.CAR / fed.scm$Federal.CAR) * 
+      Federal.CAR.tg   = ((Federal.CAR / fed.scm$Federal.CAR) * 
             civilian.usps.combined$PASSENGER.GALLONS.Domestic)/1000,
-      Federal.BUS.tg = ((Federal.BUS / fed.scm$Federal.BUS) * 
+      Federal.BUS.tg   = ((Federal.BUS / fed.scm$Federal.BUS) * 
             civilian.usps.combined$OTHER.GALLONS.Domestic)/1000,
       Federal.TRUCK.tg = ((Federal.TRUCK / fed.scm$Federal.TRUCK) * 
             civilian.usps.combined$TRUCKS.GALLONS.Domestic)/1000
@@ -501,14 +503,14 @@ mv7 <- mv7 %>% mutate(
 mv7 <- mv7 %>% mutate(
       Federal.offhwy = Federal.CAR.tg * off.by.vehicle$Passengers + 
             Federal.TRUCK.tg * off.by.vehicle$Trucks,
-      Federal.onhwy = (Federal.CAR.tg + Federal.TRUCK.tg + Federal.BUS.tg) - 
+      Federal.onhwy  = (Federal.CAR.tg + Federal.TRUCK.tg + Federal.BUS.tg) - 
             Federal.offhwy
 )
 
 mv7 <- mv7 %>% mutate(
-      SCM.CAR.vmt = civilian.usps.combined$PASSENGER.VMT.Domestic/
+      SCM.CAR.vmt   = civilian.usps.combined$PASSENGER.VMT.Domestic/
             (sum(ffr.23$PASSENGER.Domestic)) * SCM.CAR,
-      SCM.BUS.vmt = civilian.usps.combined$OTHER.VMT.Domestic/
+      SCM.BUS.vmt   = civilian.usps.combined$OTHER.VMT.Domestic/
             (sum(ffr.23$OTHER.Domestic)) * SCM.BUS,
       SCM.TRUCK.vmt = civilian.usps.combined$TRUCKS.VMT.Domestic/
             (sum(ffr.23$TRUCKS.Domestic)) * SCM.TRUCK
@@ -519,8 +521,8 @@ mv7 <- merge(x = mv7, y = scm.ratio, by = "STATE", all.x = TRUE)
 
 mv7 <- mv7 %>% mutate(
       SCM.Total.tg = Percent.Gasoline * (
-                  SCM.CAR.vmt / vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
-                  SCM.BUS.vmt / vm1$MPG[vm1$Vehicle == "BUSES"] + 
+                  SCM.CAR.vmt   / vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
+                  SCM.BUS.vmt   / vm1$MPG[vm1$Vehicle == "BUSES"] + 
                   SCM.TRUCK.vmt / vm1$MPG[vm1$Vehicle == "TRUCKS"]
             ) / 1000
 )
