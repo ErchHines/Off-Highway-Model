@@ -402,39 +402,39 @@ ffr.43 <- ffr.43 %>% mutate(
 
 ffr.43 <- ffr.43 %>% mutate(
       PASSENGER.GALLONS.Total = 
-            (ffr.43$PASSENGER.VMT.Total / 
-            vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"]) /
-            (ffr.43$PASSENGER.VMT.Total / 
-            vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
-            ffr.43$TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
-            ffr.43$OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]) * 
-            ffr.43$Worldwide.Gasoline.Use..Gallons.
+            PASSENGER.VMT.Total / vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] / (
+                  PASSENGER.VMT.Total / 
+                  vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
+                  TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
+                  OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]
+            ) * Worldwide.Gasoline.Use..Gallons.
 )
 
 ffr.43 <- ffr.43 %>% mutate(
-      TRUCKS.GALLONS.Total = (ffr.43$TRUCKS.VMT.Total / 
-            vm1$MPG[vm1$Vehicle == "TRUCKS"]) / (ffr.43$PASSENGER.VMT.Total /
-            vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
-            ffr.43$TRUCKS.VMT.Total/vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
-            ffr.43$OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]) * 
-            ffr.43$Worldwide.Gasoline.Use..Gallons.
+      TRUCKS.GALLONS.Total = 
+            TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] / (
+                  PASSENGER.VMT.Total /
+                  vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
+                  TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
+                  OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]
+            ) * Worldwide.Gasoline.Use..Gallons.
 )
 
 ffr.43 <- ffr.43 %>% mutate(
-      OTHER.GALLONS.Total = (ffr.43$OTHER.VMT.Total / 
-            vm1$MPG[vm1$Vehicle == "BUSES"]) / 
-            (ffr.43$PASSENGER.VMT.Total / 
-            vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
-            ffr.43$TRUCKS.VMT.Total/vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
-            ffr.43$OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]) * 
-            ffr.43$Worldwide.Gasoline.Use..Gallons.
+      OTHER.GALLONS.Total = 
+            OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"] / (
+                  PASSENGER.VMT.Total / 
+                  vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
+                  TRUCKS.VMT.Total / vm1$MPG[vm1$Vehicle == "TRUCKS"] + 
+                  OTHER.VMT.Total / vm1$MPG[vm1$Vehicle == "BUSES"]
+            ) * Worldwide.Gasoline.Use..Gallons.
 )
 
 ffr.43 <- ffr.43 %>% mutate(
       PASSENGER.GALLONS.Domestic = PASSENGER.VMT.Domestic / 
             PASSENGER.VMT.Total * PASSENGER.GALLONS.Total, 
       PASSENGER.GALLLONS.Foreign = PASSENGER.VMT.Foreign / 
-      PASSENGER.VMT.Total * PASSENGER.GALLONS.Total
+            PASSENGER.VMT.Total * PASSENGER.GALLONS.Total
 )
 
 ffr.43 <- ffr.43 %>% mutate(
