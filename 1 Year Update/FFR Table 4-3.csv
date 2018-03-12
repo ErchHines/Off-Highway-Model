@@ -1,55 +1,43 @@
-Department or Agency,PASSENGER VMT Domestic ,PASSENGER VMT Foreign,TRUCKS VMT Domestic,TRUCKS VMT Foreign,OTHER VMT Domestic,OTHER VMT Foreign,Worldwide Gasoline Use (Gallons)
-American Battle Monuments Commission,7904,138340.8,0,63321.2,0,0,3614
-Broadcasting Board of Governors,42491.7,417256.2,17572.3,444966.8,0,76323,40764
-Consumer Product Safety Commission,622235.6,0,18437.4,0,0,0,27274
-Court Services and Offender Supervision Agency,181174.7,0,2656.3,0,0,0,11544
-Department of Agriculture,125992805.1,593083.1,213446786.9,516500.9,704144,0,16456036
-Department of Commerce,8054372.6,593097,6062081.4,14872,44331,0,887642
-Department of Education,977903,0,0,0,838,0,51479
-Department of Energy,29657054.6,0,52952654.4,0,3324746,0,4043510
-Department of Health and Human Services,26360260.3,2145941.7,5612996.7,241796.3,817074,50098,1566720
-Department of Homeland Security,432534378,3455207.3,172973506,1802313.7,1855884,1094,33279372
-Department of Housing and Urban Development,3321144.6,0,7144.4,0,0,0,181173
-Department of Justice,385022048.6,5594409.4,67600761.4,630842.6,3102442,0,17843307
-Department of Labor,34304174.1,0,5205189.9,0,2468954,0,2368020
-Department of State,8144194.5,53569663.4,1625553.5,19263000.6,163693,622047,4213723
-Department of the Interior,93519269.8,0,156500278.2,0,7548856,0,12400019
-Department of Transportation,35903801,0,17124688,0,5788,0,2682096
-Department of the Treasury,26846285,81800,938957,0,0,0,1717988
-Department of Veterans Affairs,151890342.7,37005,28066580.3,131,15068959,0,7408040
-Environmental Protection Agency,7787367.6,8875,1535205.4,0,58748,0,444244
-Equal Employment Opportunity Commission,596593.1,0,7096.9,0,0,0,24641
-Federal Communications Commission,246020,0,6143,0,0,0,23494
-Federal Housing Finance Agency,11402,0,0,0,0,0,667
-Federal Maritime Commission,29626,0,0,0,0,0,359
-Federal Trade Commission,0,0,,0,0,0,784
-General Services Administration,5916866.4,44024,388615.6,0,6254,0,302527
-Government Printing Office,110633.7,0,148160.3,0,0,0,13771
-Library of Congress,69924,0,48479,0,2390,0,6671
-National Aeronautics and Space Administration,6690337,134188,6571127,648,301023,0,714221
-National Archives & Records Administration,190381.2,0,121175.8,0,0,0,19384
-National Gallery of Art,23207.5,0,13217.5,0,0,0,2251
-National Labor Relations Board,257243,0,2511,0,0,0,11141
-National Science Foundation,912190.2,134990.3,1176785.8,325095.7,65420,3263,161406
-National Transportation Safety Board,20404,0,0,0,0,0,1899
-Nuclear Regulatory Commission,165969.3,0,9390.8,0,0,0,5933
-Office of Personnel Management,15202457.3,0,50046.7,0,0,0,661538
-Peace Corps,171261,6865673.7,0,795655.3,0,88219,91263
-Pretrial Services Agency for the Dist of Columbia,2348,0,0,0,0,0,108
-Small Business Administration,1462717.5,0,26903.5,0,0,0,66150
-Smithsonian Institution,797904.5,41955.6,864906.5,82441.4,34512,0,81212
-Social Security Administration,5177060.2,0,218380.8,0,17770,0,209803
-Tennessee Valley Authority,13279621.9,0,23751892.1,0,629,0,2466223
-US Agency for International Development,7992,0,0,0,0,0,121091
-Total Civilian Agencies,1422511367,73855510.5,763095881.8,24181585.5,35592455,841044,110613102
-"Corps of Engineers, Civil Works",19159383.7,0,43425238.3,0,5529,0,4179101
-Defense Agencies,33915092.8,2438475,7689268.2,781082,1186292,1473067,1870135
-Department of Air Force,62861738.4,14078604.3,116875748.6,40387293.7,3945637,4691409,12166765
-Department of Army,246781541.3,42522974.2,164819560.7,24359996.8,15511870,724348,24748204
-Department of Navy,92075368.5,11215057.8,84356038.5,11196179.2,2169223,1537906,10588418
-United States Marine Corps,71506535.9,2585241.9,28381560.1,4615909.1,2587545,1220584,4855957
-Total Military Agencies,526299660.6,72840353.2,445547414.4,81340460.8,25406096,9647314,58408580
-U.S. Postal Service,61710794.5,,1337189842,0,8986,0,126053965
-Total U.S. Postal Service,61710794.5,0,1337189842,0,8986,0,126053965
-Total All Agencies,2010521822,146695863.7,2545833138,105522046.3,61007537,10488358,295075647
-Civilan Agencies and Postal Service,1484222162,73855510.5,2104976988,25563654.98,30910176.18,730218.1453,236667067
+Department or Agency,Year,PASSENGER VMT Domestic ,PASSENGER VMT Foreign,TRUCKS VMT Domestic,TRUCKS VMT Foreign,OTHER VMT Domestic,OTHER VMT Foreign,Worldwide Gasoline Use (Gallons)
+American Battle Monuments Commission,2015,2695,158762, ,57679, , ,3241
+Broadcasting Board of Governors,2015,41915,577178,15380,567624, ,41066,30267
+Consumer Product Safety Commission,2015,617201, ,27408, , , ,23224
+Court Services and Offender Supervision Agency,2015,194618, ,2325, , , ,4878
+Department of Agriculture,2015,132114804,625805,202223903,556061,539578, ,18243590
+Department of Commerce,2015,8587714,673770,6344353,71018,48482, ,722748
+Department of Education,2015,1059637, , , ,1284, ,43835
+Department of Energy,2015,28257954, ,52546096, ,3158849, ,3612807
+Department of Health and Human Services,2015,26760698,1679370,6129047,180599,853035,43867,1502207
+Department of Homeland Security,2015,443097615,4463116,171549418,188053,3117680,3067,35743969
+Department of Housing and Urban Development,2015,3632887, ,9301, , , ,147819
+Department of Justice,2015,364349129,4554405,59561478,504850,11552761, ,22530172
+Department of Labor,2015,35870924, ,5356201, ,2628722, ,2251374
+Department of State,2015,8682968,51574680,1759637,19779605,199164,845034,4078560
+Department of the Interior,2015,85544346, ,139492031, ,8327988, ,13330943
+Department of Transportation,2015,37174950, ,17319075, ,7406, ,2475737
+Department of the Treasury,2015,29779748,31000,1150588, , , ,1306146
+Department of Veterans Affairs,2015,147361090,42250,31715122,153,12467357, ,7516882
+Environmental Protection Agency,2015,8045491,6415,1551741, ,64840, ,396939
+Equal Employment Opportunity Commission,2015,650130, ,6955, , , ,21990
+Federal Communications Commission,2015,333867, , , , , ,14218
+Federal Housing Finance Agency,2015,8205, , , , , ,582
+Federal Maritime Commission,2015,49345, , , , , ,2886
+General Services Administration,2015,5896105,31798,381148, ,13689, ,242222
+Government Printing Office,2015,94258, ,102832, , , ,10374
+Library of Congress,2015,49783, ,52663, ,4290, ,4935
+National Aeronautics and Space Administration,2015,7618477,130409,7376194,197,194333, ,430508
+National Archives & Records Administration,2015,147120, ,156391, , , ,12721
+National Gallery of Art,2015,20622, ,13792, , , ,3164
+National Labor Relations Board,2015,308596, ,535, , , ,10289
+National Science Foundation,2015,1075625,93803,1084487,182412,76747,2575,128048
+National Transportation Safety Board,2015,29425, , , , , ,1602
+Nuclear Regulatory Commission,2015,66520, ,9114, , , ,3628
+Office of Personnel Management,2015,14629195, ,40635, , , ,534811
+Peace Corps,2015,199351,6771085, ,745544, ,72827,108290
+Pretrial Services Agency for the Dist of Columbia,2015,2244, , , , , ,162
+Small Business Administration,2015,1488509, ,22376, , , ,61097
+Smithsonian Institution,2015,497016,14039,489746,44629,96340, ,32258
+Social Security Administration,2015,5257216, ,230480, ,10145, ,203990
+Tennessee Valley Authority,2015,14084777, ,23124033, ,895, ,2516226
+US International Trade Commission,2015,2457, ,5726, , , ,583
+U.S. Postal Service,2015,63442752,0,1328192024,0,3786,0,126053965
