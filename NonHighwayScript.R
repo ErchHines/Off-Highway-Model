@@ -1,7 +1,21 @@
 library(dplyr)
 library(data.table)
 
-analysis.year <- 2017
+analysis.year      <- 2017
+
+ag.data.year       <- 2016
+ag.census.year     <- 2012
+
+aviation.data.year <- 2016
+
+boat.data.year     <- 2016
+NRBS.survey.year   <- 2012
+
+vm2.data.year      <- 2016
+
+ffr.data.year      <- 2015
+fhwa.data.year     <- 2016
+
 
 #### Global Variables and Functions ###################
 EPA <- read.csv("Unknown Update/EPA Results.csv", header = TRUE)
@@ -15,6 +29,7 @@ is.leapyear=function(year){
     #http://en.wikipedia.org/wiki/Leap_year
     return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))
 }
+
 
 ## Gasoline Prices for the States #####################
 retail.gas.big.states <- read.csv("1 Year Update/Retail Gasoline.csv", header = TRUE)
@@ -49,10 +64,8 @@ retail.gas.all <- rbind(retail.gas.impute,retail.gas.report)
 #remove tables that are not likely to be needed later
 rm(retail.gas.big.states,retail.gas.impute,retail.gas.padd,retail.gas.report)
 
-#### Agriculture Values ##############################
 
-ag.data.year <- 2016
-ag.census.year <- 2012
+#### Agriculture Values ##############################
 
 #Remove DC from our VIUS table
 ag.vius <- subset(vius, !(vius$State == "District of Columbia"))
@@ -123,8 +136,8 @@ ag.state.all <- merge(
     by = "State", all.x = TRUE
 )
 
-# We only want to perform our calculations on the current data for the analysis year
-ag.state.all <- subset(ag.state.all, ag.state.all$Year==analysis.year-1)
+# We only want to perform our calculations on the current data 
+ag.state.all <- subset(ag.state.all, ag.state.all$Year == ag.data.year)
 
 ag.state.all$agall <- ag.state.all$total.gas.s/ag.state.all$ppg
 
@@ -139,7 +152,7 @@ ag.state.all <- ag.state.all %>% mutate(
     truck.on    = (agall - Agricultural.Equipment) * ag.vius$ONVMT.Truck, 
     Agriculture = agall - truck.on
 )
-
+fv
 off.highway.model <- ag.state.all[,c("State","Agriculture")]
 
 
@@ -149,8 +162,6 @@ rm(ag.state.all,ag.fe.15.states,ag.region,ag.state.impute,
     ay.ag.fe.15.states,ay.ag.fe.region,control.total)
 
 #### Aviation Values ############################
-
-aviation.data.year <- 2016
 
 aviation.state <- read.csv("1 Year Update/Aviation Data.csv", header = TRUE)
 aviation.padd <- read.csv("1 Year Update/PADD Aviation.csv", header = TRUE)
@@ -260,10 +271,8 @@ rm(aviation.missing, aviation.padd, aviation.padd.sum,
     aviation.state, aviation.state.impute, aviation.state.impute1, 
     aviation.state.report, aviation.offhwy)
 
-#### Recreational Boating Values #################
 
-boat.data.year <- 2016
-NRBS.survey.year <- 2012
+#### Recreational Boating Values #################
 
 DPI <- read.csv("1 Year Update/BEA DPI.csv", header = TRUE)
 boating <- read.csv("1 Year Update/State Rec Boating.csv", header = TRUE)
@@ -318,8 +327,6 @@ rm(boat.types,boating,dpi.growth, gas.growth, DPI, boating.offhwy)
 
 #### Industrial Commerical and Construction Values #############
 
-vm2.data.year <- 2016
-
 vm2 <- read.csv("1 Year Update/VM2.csv", header = TRUE)
 
 #merge our vm2 with the vius
@@ -352,14 +359,12 @@ off.highway.model <- merge(
 
 rm(icc)
 
+
 #### Public Sector Values ################################
 
 #The two datasets used for this section come from the 
 #Federal Fuel Report releaseed by GSA and the Annual Highway
 #Statistics from FHWA
-
-ffr.data.year <- 2015
-fhwa.data.year <- 2016
 
 # I don't know why this is used
 scm.adj <- 0.131771767836034
@@ -521,9 +526,9 @@ mv7 <- merge(x = mv7, y = scm.ratio, by = "STATE", all.x = TRUE)
 
 mv7 <- mv7 %>% mutate(
     SCM.Total.tg = Percent.Gasoline * (
-            SCM.CAR.vmt   / vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
-            SCM.BUS.vmt   / vm1$MPG[vm1$Vehicle == "BUSES"] + 
-            SCM.TRUCK.vmt / vm1$MPG[vm1$Vehicle == "TRUCKS"]
+        SCM.CAR.vmt   / vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
+        SCM.BUS.vmt   / vm1$MPG[vm1$Vehicle == "BUSES"] + 
+        SCM.TRUCK.vmt / vm1$MPG[vm1$Vehicle == "TRUCKS"]
     ) / 1000
 )
 
@@ -538,9 +543,11 @@ off.highway.model <- merge(
     by.x = "State", by.y = "STATE", all.y = TRUE
 )
 
+
 #remove all the public service tables no longer being used
 rm(civilian.usps,civilian.usps.combined, fed.scm, ffr.23, ffr.43, 
     mf2, mf21, mv7, mv9, off.by.vehicle, scm.ratio, vm1, vm2)
+
 
 #### Writing and Displaying the Model #####################
 
