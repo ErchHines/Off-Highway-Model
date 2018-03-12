@@ -152,14 +152,14 @@ ag.state.all <- ag.state.all %>% mutate(
     truck.on    = (agall - Agricultural.Equipment) * ag.vius$ONVMT.Truck, 
     Agriculture = agall - truck.on
 )
-fv
+
 off.highway.model <- ag.state.all[,c("State","Agriculture")]
 
 
 #remove tables except for final ag numbers
 rm(ag.state.all,ag.fe.15.states,ag.region,ag.state.impute,
     ag.state.report,census.ag.fe.15.states,census.ag.fe.region,
-    ay.ag.fe.15.states,ay.ag.fe.region,control.total)
+    ay.ag.fe.15.states,ay.ag.fe.region,control.total, ag.vius)
 
 #### Aviation Values ############################
 
@@ -544,9 +544,97 @@ off.highway.model <- merge(
 )
 
 
-#remove all the public service tables no longer being used
+#remove all the public service tables no longer being used, vm1 and MV9
+#will be used for off road recreational
+
 rm(civilian.usps,civilian.usps.combined, fed.scm, ffr.23, ffr.43, 
-    mf2, mf21, mv7, mv9, off.by.vehicle, scm.ratio, vm1, vm2)
+    mf2, mf21, mv7, off.by.vehicle, scm.ratio, vm2)
+
+
+
+#### Offroad Recreational Values ##########################
+
+#Note: Annual Data comes from FHWA so use fhwa.data.year
+#state level off road data and MV9 will be used to build out table
+
+rec.parameters <- read.csv("Unknown Update/REC Parameters.csv", header = TRUE)
+rec <- read.csv("Unknown Update/State Level Off-Road.csv", header = TRUE)
+
+#Get our off road gallons per vehicle paramenter
+rec.parameters <- rec.parameters %>% mutate(
+    Offrd.gv = (
+        vm1$VMT.Vehicle[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] * (
+            1 - LT.Offrd.VMT.Discount
+        )
+    ) / (
+        vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] * (
+            1 - LT.Offrd.MPG.Discount
+        )
+    )
+)
+
+#merge the mv9 and state off road recrational tables
+rec <- merge(
+    x = mv9, y = rec,
+    by = c("STATE","ABBREV","FIPS")
+)
+
+#create the calculated columns for light truck, motorcycle and ATV use
+rec <- rec %>% mutate(
+    LT.offrd.gal = (
+        Pickups * Percent.Offrd.Pickup +
+        SUVs * Percent.Offrd.SUVs
+        ) * rec.parameters$Offrd.gv,
+    Motorcycle.Low  = Motorcycles * 54,
+    Motorcycle.Mid  = Motorcycles * 59,
+    Motorcycle.High = Motorcycles * 64,
+    ATV.Low  = ATVs * rec.parameters$ATV.Recreational.Usage * 46,
+    ATV.Mid  = ATVs * rec.parameters$ATV.Recreational.Usage * 55.5,
+    ATV.High = ATVs * rec.parameters$ATV.Recreational.Usage * 65
+)
+
+#And now the long-awaited calculations for snowmobile gallonage
+rec <- rec %>% mutate(
+    Total.Snowmobiles = Reg.Snowmobiles + UnReg.Snowmobiles,
+    Rec.Fuel = rec.parameters$Snow.Rec.Percent *
+        rec.parameters$Snow.Rec.MPG * Total.Snowmobiles * Snow.Factor,
+    Ice.Fuel = rec.parameters$Snow.Ice.Percent *
+        rec.parameters$Snow.Ice.MPG * Total.Snowmobiles * Snow.Factor,
+    Adj.Rec.Fuel = Rec.Fuel * (
+        rec.parameters$Snow.Rec.Percent * rec.parameters$Snow.Rec.MPG *
+        sum(Total.Snowmobiles, na.rm = TRUE) /
+        sum(Rec.Fuel, na.rm = TRUE)
+    ),
+    Adj.Ice.Fuel = Ice.Fuel * (
+        rec.parameters$Snow.Ice.Percent * rec.parameters$Snow.Ice.MPG *
+        sum(Total.Snowmobiles, na.rm = TRUE) /
+        sum(Ice.Fuel, na.rm = TRUE)
+    ),
+    Adj.Snow.Total = Adj.Rec.Fuel + Adj.Ice.Fuel
+)
+
+#Land Factor Assigned to the states
+rec$Federal.Land.Factor <- cut(
+    rec$Rural.Net.Land,
+    breaks = c(0, 20000, 40000, 60000, 80000, 100000, 120000, Inf),
+    labels = c(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3)
+)
+
+rec$Federal.Land.Factor <- as.numeric(as.character(rec$Federal.Land.Factor))
+
+#Get the total fuel use, 
+#Note: Not putting this into the new model table as it is not
+#there in the spreadsheet, will look into, the final adjusted
+#number is used in the combined model so will it Recreational
+
+rec <- rec %>% mutate(
+    unadjusted.recreational = 
+        rowSums(rec[c("LT.offrd.gal", "Motorcycle.Mid", "ATV.Mid", "Adj.Snow.Total")],
+                na.rm = TRUE),
+    Recreational = unadjusted.recreational * (1 + Federal.Land.Factor)
+)
+
+rm(rec.parameters, vm1, mv9)
 
 
 #### Writing and Displaying the Model #####################
