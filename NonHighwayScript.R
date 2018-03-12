@@ -26,7 +26,6 @@ state.padd.fips <- read.csv("StatePaddFips.csv", header=TRUE)
 
 #leapyear function from r-bloggers
 is.leapyear=function(year){
-    #http://en.wikipedia.org/wiki/Leap_year
     return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))
 }
 
@@ -39,15 +38,15 @@ retail.gas.padd <- read.csv("1 Year Update/PADD Gasoline Data.csv", header = TRU
 retail.gas.all <- merge(
     x=state.padd.fips,
     y=retail.gas.big.states[c("State","Year","ppg")], 
-    by="State", all.x = TRUE
+    by="State", all = TRUE
 )
 
 #subset based on whether EIA provides report for particular states
 retail.gas.report <- subset(retail.gas.all, is.na(retail.gas.all$ppg)==FALSE)
 retail.gas.impute <- subset(retail.gas.all, is.na(retail.gas.all$ppg)==TRUE)
 
-#remove NA columns to avoid duplication and we are going to 
-#get these values from the PADD Data
+# #remove NA columns to avoid duplication and we are going to 
+# #get these values from the PADD Data
 retail.gas.impute$ppg <- NULL
 retail.gas.impute$Year <- NULL
 
@@ -55,7 +54,7 @@ retail.gas.impute$Year <- NULL
 retail.gas.impute <- merge(
     x=retail.gas.impute,
     y=retail.gas.padd[c("PADD", "Year","ppg")],
-    by="PADD", all = TRUE
+    by=c("PADD"), all = TRUE
 )
 
 #bring all the states back together
@@ -392,6 +391,10 @@ mv7 <- subset(mv7, mv7$Year == fhwa.data.year)
 mv9 <- subset(mv9, mv9$Year == fhwa.data.year)
 vm1 <- subset(vm1, vm1$Year == fhwa.data.year)
 
+mv7[is.na(mv7)] <- 0
+ffr.43[is.na(ffr.43)] <- 0
+ffr.23[is.na(ffr.43)] <- 0
+
 #Off road percentage by vehicle and Highway ratios for SCM, unknown update
 off.by.vehicle <- read.csv("Unknown Update/Off By Vehicle.csv", header = TRUE)
 scm.ratio <- read.csv("Unknown Update/SCM Ratio.csv", header = TRUE)
@@ -479,7 +482,7 @@ civilian.usps.combined <- civilian.usps %>% mutate(
 #For the next little bit, just going to be doing the calculated columns for 
 #Federal and SCM gallons
 
-mv7[is.na(mv7)] <- 0
+
 
 mv7 <- mv7 %>% mutate(
     Federal.TOTAL = Federal.CAR + Federal.BUS + Federal.TRUCK,
@@ -639,4 +642,4 @@ rm(rec.parameters, vm1, mv9)
 
 #### Writing and Displaying the Model #####################
 
-# write.csv(off.highway.model, "off_highway_script.csv", row.names = FALSE)
+write.csv(off.highway.model, "off_highway_script.csv", row.names = FALSE)
