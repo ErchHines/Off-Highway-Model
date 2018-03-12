@@ -21,7 +21,8 @@ retail.gas.big.states <- read.csv("1 Year Update/Retail Gasoline.csv", header = 
 retail.gas.padd <- read.csv("1 Year Update/PADD Gasoline Data.csv", header = TRUE)
 
 #cretate table with all states that inlcudes ppg columns
-retail.gas.all <- merge(x=state.padd.fips,
+retail.gas.all <- merge(
+      x=state.padd.fips,
       y=retail.gas.big.states[c("State","Year","ppg")], 
       by="State", all.x = TRUE
 )
@@ -327,7 +328,8 @@ icc <- merge(x = vm2, y = vius, by = "State")
 
 # Perform all the calculations to get the off highway number
 
-icc <- icc %>% mutate(off.vmt.mm = VM.2 * Adj..Factor,
+icc <- icc %>% mutate(
+      off.vmt.mm = VM.2 * Adj..Factor,
       PERCENT.VMT.OTHER = 
             1 - rowSums(icc[c("PERCENT.VMT.CONSTRUCTION", "PERCENT.VMT.INDUSTRIAL", 
             "PERCENT.VMT.COMMERCIAL")]),
@@ -515,10 +517,13 @@ mv7 <- mv7 %>% mutate(
 #Bring in our ratios
 mv7 <- merge(x = mv7, y = scm.ratio, by = "STATE", all.x = TRUE)
 
-mv7$SCM.Total.tg = mv7$Percent.Gasoline * (mv7$SCM.CAR.vmt / 
-      vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
-      mv7$SCM.BUS.vmt / vm1$MPG[vm1$Vehicle == "BUSES"] + 
-      mv7$SCM.TRUCK.vmt / vm1$MPG[vm1$Vehicle == "TRUCKS"]) / 1000
+mv7 <- mv7 %>% mutate(
+      SCM.Total.tg = Percent.Gasoline * (
+                  SCM.CAR.vmt / vm1$MPG[vm1$Vehicle == "ALL LIGHT DUTY VEHICLES"] + 
+                  SCM.BUS.vmt / vm1$MPG[vm1$Vehicle == "BUSES"] + 
+                  SCM.TRUCK.vmt / vm1$MPG[vm1$Vehicle == "TRUCKS"]
+            ) / 1000
+)
 
 mv7 <- mv7 %>% mutate(
       SCM.offhwy = SCM.Total.tg * SCM.Ratio,
