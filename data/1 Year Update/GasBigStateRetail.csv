@@ -1,0 +1,37 @@
+State,ABBREV,FIPS,Year,Ppg
+California,CA,6,2012,4.081
+Colorado,CO,8,2012,3.531
+Florida,FL,12,2012,3.629
+Massachusetts,MA,25,2012,3.717
+Minnesota,MN,27,2012,3.562
+New York,NY,36,2012,3.938
+Ohio,OH,39,2012,3.611
+Texas,TX,48,2012,3.486
+Washington,WA,53,2012,3.883
+California,CA,6,2016,2.782
+Colorado,CO,8,2016,2.14
+Florida,FL,12,2016,2.216
+Massachusetts,MA,25,2016,2.221
+Minnesota,MN,27,2016,2.09
+New York,NY,36,2016,2.361
+Ohio,OH,39,2016,2.185
+Texas,TX,48,2016,2.016
+Washington,WA,53,2016,2.531
+California,CA,6,2017,3.08
+Colorado,CO,8,2017,2.429
+Florida,FL,12,2017,2.485
+Massachusetts,MA,25,2017,2.511
+Minnesota,MN,27,2017,2.387
+New York,NY,36,2017,2.619
+Ohio,OH,39,2017,2.384
+Texas,TX,48,2017,2.294
+Washington,WA,53,2017,2.911
+California,CA,6,2015,3.221
+Colorado,CO,8,2015,2.409
+Florida,FL,12,2015,2.438
+Massachusetts,MA,25,2015,2.462
+Minnesota,MN,27,2015,2.398
+New York,NY,36,2015,2.667
+Ohio,OH,39,2015,2.408
+Texas,TX,48,2015,2.26
+Washington,WA,53,2015,2.754
